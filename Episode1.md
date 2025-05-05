@@ -4,7 +4,7 @@ Q1: Is React a library or a framework ?
 A: Library
 
 Q2: What is the difference between a library and a framework ?
-A: To build an app, it requires a lot of things. A library provides a solution to a particular problem (Does a particular thing) for e.g., react library provides capability to build single page application . But for a website to function as fully fledged application , it needs lot of other dependencies , it cant work independently on its own . like for routing (react-router-don) and for state management tools like redux, caraousal library
+A: To build an app, it requires a lot of things. A library provides a solution to a particular problem (Does a particular thing) for e.g., react library provides capability to build single page application . But for a website to function as fully fledged application , it needs lot of other packages or dependencies , it cant work independently on its own . like for routing (react-router-don) and for state management tools like redux, caraousal library
 A library Takes minimum effort to integrate with the app.
 
 Q3: Create a basic page using
@@ -63,8 +63,9 @@ Q8: Does react renders UI instantly or there is any delay ?
 
 A: there is minute delay, If lets say the root div initial consists of children element before doing root.render(element) , what will be the end result?
 The existing children will be overridden by the injected element. But momentarily the original children element will be displayed on screen but they will soon be overridden by the injected element.
-The reason why they are displayed for a moment is because browser would read the index.html file from top 1 by 1 and comes across the script tag to include the react and react-dom lib and starts downloading those scripts (can be seen in network call) which takes some time which causes this delay
- If lets say there is some error while injecting the element then original children will persist and displayed which will indicate some issue with the rendering. Therefore its a good practice to add an indicating statement inside the root div as a fallback during error
+The reason why they are displayed for a moment is because browser would read the index.html file from top 1 by 1 and comes across the script tag to include the react and react-dom lib and starts downloading those scripts (can be seen in network call) which takes some time which causes this delay.
+
+ If lets say there is some error while injecting the element then original children will persist and displayed which will indicate some issue with the rendering. Therefore its a good practice to add an indicating statement inside the root div as a fallback during error.
 
 Q9: async vs defer ?
 A: 
@@ -76,6 +77,6 @@ Q11: What is JSX ? difference between writing react without JSX and with JSX
 A: Earlier React element was created using actual API provided by react and react dom like react.createElement and reactDom.createRoot and render function which was a painful & complicated process and will result in thousands lines of code just for small functionality. 
 Solution: JSX 
 
-Q12: How to import JS o& css in html file ?
+Q12: How to import JS & css in html file ?
 A:  <script src='path'><script>
     <link rel="stylesheet" href="index.css"/>
