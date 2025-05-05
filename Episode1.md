@@ -75,3 +75,7 @@ A:
 Q11: What is JSX ? difference between writing react without JSX and with JSX
 A: Earlier React element was created using actual API provided by react and react dom like react.createElement and reactDom.createRoot and render function which was a painful & complicated process and will result in thousands lines of code just for small functionality. 
 Solution: JSX 
+
+Q12: How to import JS o& css in html file ?
+A:  <script src='path'><script>
+    <link rel="stylesheet" href="index.css"/>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
     <div id="header">header</div>
@@ -11,12 +12,12 @@
     <div id="footer">footer</div>
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script>
-    const heading1 = React.createElement("h1", {id:'title1'}, "Heading 1");
-    const heading2 = React.createElement("h2", {id:'title2'}, "Heading 2");
-    const container = React.createElement("div", {id: 'container'}, [heading1, heading2])
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(container)
+<script src="App.js">
+    // const heading1 = React.createElement("h1", {id:'title1'}, "Heading 1");
+    // const heading2 = React.createElement("h2", {id:'title2'}, "Heading 2");
+    // const container = React.createElement("div", {id: 'container'}, [heading1, heading2])
+    // const root = ReactDOM.createRoot(document.getElementById("root"));
+    // root.render(heading)
 </script>
 </body>
 </html>
