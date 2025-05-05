@@ -6,9 +6,17 @@
     <title>Namaste React</title>
 </head>
 <body>
-    <div id="root"></div>
-</body>
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <div id="header">header</div>
+    <div id="root">Not Rendered</div>
+    <div id="footer">footer</div>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script>
+    const heading1 = React.createElement("h1", {id:'title1'}, "Heading 1");
+    const heading2 = React.createElement("h2", {id:'title2'}, "Heading 2");
+    const container = React.createElement("div", {id: 'container'}, [heading1, heading2])
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(container)
 </script>
+</body>
 </html>
