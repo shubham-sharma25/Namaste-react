@@ -68,10 +68,10 @@ The reason why they are displayed for a moment is because browser would read the
  If lets say there is some error while injecting the element then original children will persist and displayed which will indicate some issue with the rendering. Therefore its a good practice to add an indicating statement inside the root div as a fallback during error.
 
 Q9: async vs defer ?
-A: 
+A: The browser reads the html from top to bottom and parses it. When it sees script tag, it stops reading html and starts downloading the script, which causes delay at end user system. Therefore to prevent this delay we have 2 methods-
+async: tells the browser to download script in parallel while parsing the html, then execute the script immediately after download
+defer: tells the browser to download script in parallel while parsing the html, but execute only after the html is fully parsed
 
-Q10: Can we reduce/prevent this delay ?
-A:
 
 Q11: What is JSX ? difference between writing react without JSX and with JSX
 A: Earlier React element was created using actual API provided by react and react dom like react.createElement and reactDom.createRoot and render function which was a painful & complicated process and will result in thousands lines of code just for small functionality. 

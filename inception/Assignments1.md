@@ -10,5 +10,8 @@ e.g.
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 
 Q3: what is crossorigin ?
-A: 
+A: When a website tries to get data from another website then it is not allowed as there are some restriction . Due to this , it gives cors error.
+To fix cors error, the target website has to allow the requesting website by Access-control-allow-origin: * //all can access
+Access-control-allow-origin: http://yourwebsite //only your website alone can access
+
 
