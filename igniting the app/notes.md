@@ -1,5 +1,5 @@
 Igniting the App:
-(making our app ready to be pushed for production)
+(making our app production ready with all the configuration just like create react app does)
 -building the react app from zero instead of using react-react-app
 -react alone doesnt make an app faster
 
@@ -10,6 +10,7 @@ Dependency vs devDependencies:
 Dev dep is those library/packages which are required for development environment and not in production
 to install a package as a dev dep : npm i -D <package>
 Q: name some of dev dep & normal dep
+A: react and react-dom are dependencies while parcel is dev-dep
 
 Transitive dependency : (dependency within a dependency)
 Generally a package/dependency needs a lot of other packages/dependency to be able to run properly . When such package/dependency is installed in our app, then all the sub dependencies are also installed by default and all of these are present on node_modules.
@@ -50,8 +51,45 @@ A: The pack & pack-lock notes the version of all dependencies needed by our proj
 npm vs npx :
 npm installs a package while npx executes/runs a package
 
-Running the app in local using Parcel :
+import:
+to consume a package/library into our file
+import React from 'react'; consumes react from node_modules
+
+Parcel/ webpack :
+-Creates development build of the app
+-creates a local server and host the app on the server
+-HMR
+-file watching algorithm (c++)
+-caching for faster build
+-image optimisation(image loading is most expensive thing)
+-bundling/minification (dist folder)
+-compress
+-Tree shaking - remove unused code while creating the build
+-content hashing ?
+-differential bundling - to support older browser
+-better error presentation
+-code-splitting
+-hosting app on https : npx parcel index.html --https 
+
 npx parcel <starting point of app>
 npx parcel index.html
-Explaination : parcel will go to the source file index.html and create a dev build for our app and host that build onto a local server
+Explaination : parcel will go to the source file index.html and create a development build for our app and host that build onto a local server and put the build in dist folder
 
+HMR:
+Parcel uses a file watching algorithm so that when a file is saved, the app will auto refresh on the browser
+
+parcel-cache: 
+parcel caches the build which it generates so that next time it doesnt have to recreate the whole build
+
+How to create prod build using parcel : npx parcel build index.html
+will create 3 files : 1 html, 1 js, 1 css
+These 3 files are nothing but compressed version of our app .
+html file will be the source (entry point) of the app and it will include the css and js file using link tag and script tag inside it , forming a regular app structure
+And these 3 files alone are responsible to run the app in production
+
+browsersList: in package.json
+is a list of browsers which are most compatibe with our app
+fun note: on the browserlist website, we can find out which is most used browser and its version
+More browsers we add in this list, more will be the bundle size of the app because parcel will add code to support all those browsers which is not always needed, therefore we go ahead with most used browsers rather than all the browsers that exists 
+Note: govt & important websites should be accessible on all browser with all version
+-can even set the country where the app should work
