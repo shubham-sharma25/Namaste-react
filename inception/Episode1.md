@@ -21,6 +21,7 @@ Q3: Create a basic page using
 <script>
     //create an element using react
     const heading = React.createElement("h1", {id:'title'}, "Namaste React using CDN"); //returns an object of type react element
+    //heading is equivalent to <h1 id='title'>Namaste React using CDN</h1>
     //create a root node
     const root = ReactDOM.createRoot(document.getElementById("root"));
     //render that heading inside the root node
