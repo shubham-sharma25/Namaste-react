@@ -7,8 +7,24 @@ import ReactDOM from "react-dom/client";
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(container)
 
-const heading1 = React.createElement("h1", {id: "heading"}, "Heading1")
+const heading1 = React.createElement("h1", { id: "heading" }, "Heading1")
 const jsxHeading = <h1>Hello</h1>
-
+const Title = () => {
+    return (
+        <h1>
+            namaste React using JSX
+        </h1>
+    )
+}
+const HeadingComponent = () => {
+    return (
+        <div id="container">
+            <Title />
+            {jsxHeading}
+            {heading1}
+            <h1>Namaste React Functional component</h1>
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(jsxHeading)
+root.render(<HeadingComponent />)

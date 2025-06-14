@@ -31,4 +31,75 @@ Some old browsers doesnt understand new ES6 code, so babel transpiles es6 code i
 
 Q: Difference between JSX and HTML syntax ?
 
+React Components
+
+-In a webpage, every element is a React component (buttons, inputs, lists etc)
+-2 types : class & functional
+
+Class based component - old way
+Functional component - new way
+
+React Functional component 
+
+- is A normal JS function which returns a piece of JSX/react element
+- name should start with capital to make react aware that this is a component
+e.g.
+const HeadingComponent = () => {
+    return <h1>Namaste React Functional component</h1>
+}
+root.render(<HeadingComponent />)
+//this will later be transpiled into React.createElement
+-babel understand <> as a component
+
+Component composition : rendering 1 component inside another component
+
+e.g.
+const HeadingComponent = () => {
+    return (
+        <>
+        <Title />
+        <h1>Namaste React Functional component</h1>
+        </>
+    )
+}
+
+Running JS code inside returned JSX
+
+-using {}
+
+Rendering a react element inside a component
+
+-using {elm} because every react element const elm = <h1>1</h1> is transpiled to React.createElement('h1', {}, "Hello") which returns a JS object so basically here we are rendering JS code only
+
+Rendering react component inside react element:
+
+-using <ComponentName />
+
+Different ways of rendering a react element or component inside another react component:
+
+return (
+        <div id="container">
+            <Title /> // rendeirng using <>
+            <Title></Title>
+            {Title()} // rendering using calling since Title component is a JS function
+            {jsxHeading} //<h1>Hello</h1>
+            {heading1} //React.createElement("h1", { id: "heading" }, "Heading1")
+            <h1>Namaste React Functional component</h1>
+        </div>
+    )
+-Everything is Javascript at the end of the day
+
+JSX prevents XSS : Cross Site scripting
+
+Since we can run any piece of JS code within React component using {} , hackers can exploit this.
+How ? lets understand with an bad API example:
+const data = api.getData() //returning malicious data to hack into user's system
+<>{data}</>  // will execute the hackers code into our component which will run on end user's system
+and can access a lot of personal information
+But JSX will escape these malicious code, like sanitising the data before running it 
+
+
+
+
+
 
