@@ -48,7 +48,7 @@ const restObj = [{
     type: "restaurant",
     data: {
         type: "F",
-        id: "12345",
+        id: "12346",
         name: "Megha's food",
         uuid: "12345-67890-abcdef",
         city: "New York",
@@ -80,7 +80,7 @@ const restObj = [{
     type: "restaurant",
     data: {
         type: "F",
-        id: "12345",
+        id: "12347",
         name: "Mummy's food",
         uuid: "12345-67890-abcdef",
         city: "New York",
@@ -130,10 +130,10 @@ const Header = () => {
     )
 }
 
-const RestaurantCard = ({ resData }) => {
+const RestaurantCard = ({ resData, key }) => {
     const { name, cuisines, avgRating, costForTwo, deliveryTime, img } = resData.data;
     return (
-        <div className="res-card">
+        <div className="res-card" key={key}>
             <img
                 className="res-logo"
                 src={img}
@@ -151,15 +151,9 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard
-                    resData={restObj[0]}
-                />
-                <RestaurantCard
-                    resData={restObj[1]}
-                />
-                <RestaurantCard
-                    resData={restObj[2]}
-                />
+                {restObj.map((res) => {
+                    return <RestaurantCard resData={res} key={res.data.id}/>
+                })}
             </div>
         </div>
     )
