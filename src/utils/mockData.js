@@ -1,17 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-/**
--header 
---Logo
---NavItem
--body
---Search
---RestaurantContainer
----RestaurantCard
--footer
---CopyRight
---Links
- */
+
 const restObj = [{
     type: "restaurant",
     data: {
@@ -109,63 +96,4 @@ const restObj = [{
         unserviceable: false,
     }
 }]
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img
-                    className="logo"
-                    src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All"
-                />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCard = ({ resData, key }) => {
-    const { name, cuisines, avgRating, costForTwo, deliveryTime, img } = resData.data;
-    return (
-        <div className="res-card" key={key}>
-            <img
-                className="res-logo"
-                src={img}
-            />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(',')}</h4>
-            <h4>{avgRating}</h4>
-            <h4>Rs. {costForTwo} for two</h4>
-            <h4>{deliveryTime} mins</h4>
-        </div>
-    )
-}
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                {restObj.map((res) => {
-                    return <RestaurantCard resData={res} key={res.data.id}/>
-                })}
-            </div>
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header />
-            <Body />
-        </div>
-    )
-}
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<AppLayout />)
+export default restObj;
