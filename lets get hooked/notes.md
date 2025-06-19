@@ -38,6 +38,7 @@ Types of hooks:
 -returns an array of 2 elements, i.e., the current value of the state and a updating method
 whenever a state variable changes, react will re-render the component and update the UI
 -if you inspect on the app, you will see the exact section of HTML element which is updated
+-a setState call causes the component to re-render
 
 DOM :
 
