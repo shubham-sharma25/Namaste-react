@@ -35,7 +35,18 @@ Hooks
 Types of hooks:
 -useState - to create state variable to track data updates in component
 -returns an array of 2 elements, i.e., the current value of the state and a updating method
-whenever a state variable changes, react will re-render the component
+whenever a state variable changes, react will re-render the component and update the UI
+-if you inspect on the app, you will see the exact section of HTML element which is updated
 
--useEffect
+DOM :
 
+Document object modal is a HTML tree structure of our application and can be found under the element tab on inspecting the app
+
+Virtual Dom , reconcilliation (react fibre), diffing , react behind the scenes:
+
+-when a component is rendered for the very first time, then react creates a virtual DOM which is only a representation of real dom. as a JS object
+-when there is a state or data update in the component, then react create another virtual DOM with the updated data.
+-then react compares previous virtual DOM with updated virtual DOM and find out the difference (called as diffing)
+-after finding the difference , react updates only the changed part in the real DOM with minimum operations (reconcilliation)
+-React fibre is the new algorithm of finding the diff and updating the real dom which came with react 16 
+-when you console.log (<Component>) , it prints a JS object which is virtual dom
