@@ -31,7 +31,8 @@ using Hooks -> useState Hook
 
 Hooks
 
--a hook is a normal JS function present inside react library
+-a hook is a normal JS function present inside react library which gives us access to react features like using states 
+
 Types of hooks:
 -useState - to create state variable to track data updates in component
 -returns an array of 2 elements, i.e., the current value of the state and a updating method
