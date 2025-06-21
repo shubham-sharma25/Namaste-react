@@ -21,9 +21,16 @@ A: works fine
 
 State
 
-Why we need state ? 
+Why we need state ? when to use state and when to use normal JS varaible 
 
-React automatically updates the UI (re-renders) when the data is changed. For this feature , react provides a special variable called as state which can be achieved in normal JS variable.
+When we have a data in our component which needs to be updated by any user action then,
+If we use normal JS variable to store that data , then after user action, the variable gets updated but the component doesnt re-render and UI still shows old data
+Therefore React gave state variable for such dynamic data
+When we update a state variable then react automatically re-renders are component and UI displays the updated data
+-the whole component gets re-render but only the changed part of component will be repainted on the UI
+
+When NOT to use state ?
+-We shouldnt use state when data is static or doesnt changes in the component
 
 How to use state in react component ?
 
@@ -40,6 +47,9 @@ whenever a state variable changes, react will re-render the component and update
 -if you inspect on the app, you will see the exact section of HTML element which is updated
 -a setState call causes the component to re-render
 
+Q: given a state variable const [A, setA] = useState(0), then how setState is able to update a const variable A?
+A: When setState happens, React will render the component with the new value of state, therefore the existing const variable is never changed
+
 DOM :
 
 Document object modal is a HTML tree structure of our application and can be found under the element tab on inspecting the app
@@ -47,7 +57,7 @@ Document object modal is a HTML tree structure of our application and can be fou
 Virtual Dom , reconcilliation (react fibre), diffing , react behind the scenes:
 
 -when a component is rendered for the very first time, then react creates a virtual DOM which is only a representation of real dom. as a JS object
--when there is a state or data update in the component, then react create another virtual DOM with the updated data.
+-when there is a state or data update (setState) in the component, then react will trigger its reconcilliation cycle and create another virtual DOM with the updated data.
 -then react compares previous virtual DOM with updated virtual DOM and find out the difference (called as diffing)
 -after finding the difference , react updates only the changed part in the real DOM with minimum operations (reconcilliation)
 -React fibre is the new algorithm of finding the diff and updating the real dom which came with react 16 

@@ -29,3 +29,10 @@ CORS:
 -How to bypass CORS error :
 -using browser extension
 
+Shimmer UI 
+
+showing user a fake skeleton like UI untill the actual data is fetched from backend
+better Replacement of loading spinner during the data fetch
+much better User experience
+can be found on youtube/swiggy app
+
