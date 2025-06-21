@@ -38,7 +38,7 @@ const Body = () => {
             </div>
             {filteredRestaurants.length > 0 ? (
                 <div className="res-container">
-                    {restaurants.map((res) => {
+                    {filteredRestaurants.map((res) => {
                         return <RestaurantCard resData={res} />
                     })}
                 </div>
