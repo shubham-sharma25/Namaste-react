@@ -12,10 +12,25 @@ Why ? -> option 2 gives Better UX, because in option 1, till the time data is fe
 useEffect(arg1, arg2)
 
 -useEffect is normal JS function provided by react to perform actions at defined moments in the App
+-the default nature of useEffect is to get called ater every render, but we can modify thi behaviour using dependency array
 -defined moment means for e.g. during the component initial load, after any state update has happened or when the component is getting unmounted from the DOM
 -arg1 : callback function : to execute the functionality we want to perform
 -this will get called after rendering (ComponentDidMount) 
 -arg2 : dependency array : decides the time when the callback function will be called 
+
+Type of useEffect:
+1.without dep array:
+useEffect(()=>{})
+-gets called after initial render as well as after every re-render
+
+2.with empty dep array:
+useEffect(()=>{}, [])
+-gets called after initial render only
+
+3.with some dep :
+useEffect(()=>{}, [x])
+-gets called after initial render as well as every time when x updates
+
 
 Q: Why useEffect's callback function is called after component rendering ?
 A: because to perform any action on the DOM, first the UI should be completely mounted on DOM therefore first component render then callback function gets called
