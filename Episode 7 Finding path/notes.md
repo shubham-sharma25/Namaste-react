@@ -68,3 +68,12 @@ server side routing and server side rendering are 2 different topics
 
 Client side routing : During the initial rendering of the App component , we already have rest of our component loaded as well as they are imported , so on clicking the link it directly loads on the page instantly
 
+Dynamic Routes
+e.g.
+www.swiggy.com/restaurants/meghna-foods
+www.swiggy.com/restaurants/third-wave-coffee
+
+If we have a Restaurant page to show individual restaurant from our app, 
+
+Reading param from url : useParams hook
+const { resId } useParams()

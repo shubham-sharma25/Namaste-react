@@ -1,0 +1,115 @@
+{
+    "data": {
+        "cards": [
+            {
+                "card": {
+                    "card": {
+                        "info": {
+                            "id": "12345",
+                            "name": "Gourmet Bistro",
+                            "imageId": "image123",
+                            "rating": 4.5,
+                            "ratingCount": 1200,
+                            "cuisine": [
+                                "Italian",
+                                "French"
+                            ],
+                            "costForTwo": 1500,
+                            "deliveryTime": 30,
+                            "address": "123 Gourmet St, Food City",
+                            "locality": "Food District",
+                            "city": "Food City"
+                        },
+                        "promoted": true,
+                        "avgRatingString": "4.5"
+                    }
+                }
+            },
+            {
+                "groupedCard": {
+                    "cardGroupMap": {
+                        "REGULAR": {
+                            "cards": [
+                                {
+                                    "card": {
+                                        "card": {
+                                            "itemCards": [
+                                                {
+                                                    "card": {
+                                                        "info": {
+                                                            "id": "129974389",
+                                                            "name": "Non Veg Thali",
+                                                            "category": "Empire Special Thalis & Combos",
+                                                            "description": "Chicken Kebab,Chilli Chicken,Butter Chicken Gravy,Chicken Varaval 1Pc,Dal Fry,Ghee Rice.Coin Parota,Curd,Poriyal,Pickle&Sweet",
+                                                            "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/9/7/112ee7a8-b3c1-4830-8f07-d309cc38eaf7_6e6c302b-70de-4c89-a812-9f69f681ce2b.png_compressed",
+                                                            "inStock": 1,
+                                                            "price": 31400
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "card": {
+                                                        "info": {
+                                                            "id": "129974389",
+                                                            "name": "Non Veg Thali",
+                                                            "category": "Empire Special Thalis & Combos",
+                                                            "description": "Chicken Kebab,Chilli Chicken,Butter Chicken Gravy,Chicken Varaval 1Pc,Dal Fry,Ghee Rice.Coin Parota,Curd,Poriyal,Pickle&Sweet",
+                                                            "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/9/7/112ee7a8-b3c1-4830-8f07-d309cc38eaf7_6e6c302b-70de-4c89-a812-9f69f681ce2b.png_compressed",
+                                                            "inStock": 1,
+                                                            "price": 31400
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "card": {
+                                                        "info": {
+                                                            "id": "47822505",
+                                                            "name": "Empire Special Chicken Kebab",
+                                                            "category": "Empire Classic Dry",
+                                                            "description": "Empire classic batter fried Kebab, Signature dish that's not to be missed",
+                                                            "imageId": "278713a5bde03131f5e5d0ad0ff27712",
+                                                            "inStock": 1,
+                                                            "price": 12400
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "card": {
+                                                        "info": {
+                                                            "id": "47822660",
+                                                            "name": "Tandoori Chicken",
+                                                            "category": "Empire Tawa & Tandoori Specials",
+                                                            "description": "Tandoori Chicken Empire Tandoori(Dry)",
+                                                            "imageId": "66cef11a7bc4db69349ec7e23b09a355",
+                                                            "inStock": 1,
+                                                            "price": 15500
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "card": {
+                                                        "info": {
+                                                            "id": "47822519",
+                                                            "name": "Chicken Biryani",
+                                                            "category": "Empire Biryani",
+                                                            "description": "Chicken Biryani Empire Biryani",
+                                                            "imageId": "10f8b483521b9359d9c8fcd37f23c9d3",
+                                                            "inStock": 1,
+                                                            "price": 20500
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "promoted": false,
+                                        "avgRatingString": "4.2"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

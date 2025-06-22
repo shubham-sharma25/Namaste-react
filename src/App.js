@@ -6,7 +6,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
-
+import Restaurant from "./components/Restaurant";
 const AppLayout = () => {
     return (
         <div className="app">
@@ -31,6 +31,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact />,
+            },
+            {
+                path: "/restaurant/:resId",
+                element: <Restaurant />,
             },
         ],
         errorElement: <PageNotFound />,
