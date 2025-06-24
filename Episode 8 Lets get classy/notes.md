@@ -107,6 +107,37 @@ componentDidMount:
 -is called right after the component is mounted on DOM
 -is the best place to make API calls on when the component loads the first time on the page
 
+fetch(data)
+.then(this.setState())
 
 2. Updating phase
 
+-due to the setState call in componentDidMount, the state variable gets updated and react calls render once again with the updated value of state (re-render the component)
+-reconciliation and Dom manipulation happens where the updates are made and displayed on UI
+-then componentDidUpdate gets called
+
+componentDidUpdate(prevProps, prevState){
+    if(this.state.count !== prevState.count){
+        //do something
+    }
+}
+-called every update
+
+Flow:
+//Mounting phase
+-constructor called
+-render called with initial state
+-Mounted on DOM
+-componentDidMount (API call)
+//Updating phase
+-setState
+-render with new updated state
+-DOM updated
+-componentDidUpdate
+
+Unmounting Phase:
+
+componentWillUnmount()
+-called just before a component is unmounted / destroyed from the DOM/UI or navigating between pages
+-so we need to clear lot of things before leaving the page
+-clearInterval
