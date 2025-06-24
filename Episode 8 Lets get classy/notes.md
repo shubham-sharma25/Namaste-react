@@ -22,10 +22,9 @@ constructor(props){
     super(props)
     console.log(props) //{name: ''}
 }
-Q: Why we always write super(props) when using props in class component?
-A: To use Props inside class component we must call super(props) inside constructor 
-because A class based component extends react.component so by calling super , we are calling the constcuctor of the react's component class and giving it our props so that our props are initialised with this and we can use our props like this.props.
--the value of prop is still accessible within constructor but this.props is not accessible throught the class
+Q: Why we always write super(props)?
+A: To use this.props inside constructor we must call super(props) inside constructor 
+because A class based component extends react.component so by calling super , we are calling the constructor of the react's component class and giving it our props so that our props are initialised with 'this' and we can use our props inside constructor like this.props.
 
 Q: what if we call super but dont pass props?
 A: this.props will be undefined
