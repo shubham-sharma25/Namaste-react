@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer"
 import { API_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -26,6 +27,10 @@ const Body = () => {
     }
     const filterRestaurants = () => {
         setRestaurants(restaurants.filter((res) => res.info.avgRating > 4.2))
+    }
+    const onlineStatus = useOnlineStatus();
+    if(!onlineStatus){
+        return(<h1>Looks like you are offline</h1>)
     }
     return (
         <div className="body">
