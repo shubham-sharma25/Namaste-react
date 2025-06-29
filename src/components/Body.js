@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import RestaurantCard from "./RestaurantCard";
+import withPromotedLabel from "./RestaurantHOC";
 import Shimmer from "./Shimmer"
 import { API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -56,7 +57,8 @@ const Body = () => {
             {filteredRestaurants.length > 0 ? (
                 <div className="flex flex-wrap">
                     {filteredRestaurants.map((res) => {
-                        return <RestaurantCard resData={res} />
+                        const RestaurantWithPromotedLabel = withPromotedLabel(RestaurantCard)
+                        return res.info.promoted ? <RestaurantWithPromotedLabel resData={res} /> :<RestaurantCard resData={res} />
                     })}
                 </div>
             ) : <Shimmer />}

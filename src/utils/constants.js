@@ -6,3 +6,4 @@ export const MENU_API_URL = `https://my-json-server.typicode.com/shubham-sharma2
 // Restaurant Item Image CDN URL for Restaurant card
 export const IMG_CDN_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/`;
 
+export const ITEM_CATEGORY = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
