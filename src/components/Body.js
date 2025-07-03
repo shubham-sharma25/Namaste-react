@@ -58,7 +58,11 @@ const Body = () => {
                 <div className="flex flex-wrap">
                     {filteredRestaurants.map((res) => {
                         const RestaurantWithPromotedLabel = withPromotedLabel(RestaurantCard)
-                        return res.info.promoted ? <RestaurantWithPromotedLabel resData={res} /> :<RestaurantCard resData={res} />
+                        return (
+                            <div key={res.info.id}>
+                            {res.info.promoted ? <RestaurantWithPromotedLabel resData={res} /> :<RestaurantCard resData={res} />}
+                            </div>
+                        )
                     })}
                 </div>
             ) : <Shimmer />}

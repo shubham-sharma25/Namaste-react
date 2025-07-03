@@ -3,7 +3,7 @@ import { IMG_CDN_URL } from "../utils/constants";
 const RestaurantCard = ({ resData }) => {
     const { id, name, cuisines, avgRating, costForTwo, sla: { deliveryTime } } = resData.info;
     return (
-        <div className="m-4 p-4 w-[220] rounded-lg bg-gray-100 hover:bg-gray-200" key={id}>
+        <div className="m-4 p-4 w-[220] rounded-lg bg-gray-100 hover:bg-gray-200">
             <Link to={"/restaurant/" + "425"}>
                 <img
                     className="res-logo"
