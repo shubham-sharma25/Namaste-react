@@ -1,15 +1,13 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import RestaurantCard from "./RestaurantCard";
 import withPromotedLabel from "./RestaurantHOC";
 import Shimmer from "./Shimmer"
 import { API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
-    const {loggedInUser, setUser} = useContext(UserContext);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     useEffect(() => {
         fetchData()
@@ -35,10 +33,6 @@ const Body = () => {
     if(!onlineStatus){
         return(<h1>Looks like you are offline</h1>)
     }
-    const handleChange = (e) => {
-        // alert(e.target.value)
-setUser(e.target.value)
-    }
     return (
         <div className="body">
             <div className="flex">
@@ -58,10 +52,6 @@ setUser(e.target.value)
                 </div>
                 <div className="m-4 p-4">
                   <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={filterRestaurants}>Top Rated Restaurants</button>
-                </div>
-                <div className="m-4 p-4">
-                <label>UserName:</label>
-                  <input className="border border-black" type="text" value={loggedInUser} onChange={handleChange}/>
                 </div>
             </div>
             {filteredRestaurants.length > 0 ? (

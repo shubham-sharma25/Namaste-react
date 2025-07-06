@@ -19,6 +19,7 @@ const AppLayout = () => {
             setUser('Shubham');
         }, 1000);
     }, [])
+    // setUser can be passed down to child components to allow them to update the context
     return (
         <UserContext.Provider value={{ loggedInUser: user || 'Guest', setUser }}>
             <div className="app">
