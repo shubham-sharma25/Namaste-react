@@ -1,11 +1,8 @@
-import {useState} from "react"
 import CategoryItems from "./CategoryItems";
-const Category = ({ data }) => {
-  const [open, setOpen] = useState(false)
+
+const Category = ({ data, open, handleClick }) => {
   const { title, itemCards } = data || {};
-  const handleClick = () => {
-    setOpen(!open);
-  }
+  
   return (
     <div>
       <div className="w-6/12 mx-auto my-4 shadow-lg p-4 bg-gray-100">
