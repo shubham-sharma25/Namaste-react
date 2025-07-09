@@ -1,5 +1,6 @@
 import React, { Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header"
 import Body from "./components/Body";
@@ -7,6 +8,7 @@ import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Restaurant from "./components/Restaurant";
 import UserContext from "./utils/UserContext";
+import store from './redux/store';
 
 const About = React.lazy(() => import('./components/About'))
 const Grocery = React.lazy(() => import("./components/Grocery"))
@@ -21,12 +23,14 @@ const AppLayout = () => {
     }, [])
     // setUser can be passed down to child components to allow them to update the context
     return (
-        <UserContext.Provider value={{ loggedInUser: user || 'Guest', setUser }}>
-            <div className="app">
-                <Header />
-                <Outlet />
-            </div>
-        </UserContext.Provider >
+        <Provider store={store}>
+            <UserContext.Provider value={{ loggedInUser: user || 'Guest', setUser }}>
+                <div className="app">
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider >
+        </Provider>
     )
 }
 const appRouter = createBrowserRouter([

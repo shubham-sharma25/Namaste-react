@@ -44,6 +44,69 @@ How to read the store data
 
 A selector gives us access to the store data and it subscribes to the store , meaning is in-sync with store data, so that when store data changes, the selector will automatically send the updated data to the component
 
+Step by Step implementation:
+
+1. Installation
+- install @reduxjs/toolkit and react-redux
+
+2. Building the store
+
+-configureStore function comes from redux because its a common utlity across frameworks and libraryt
+import {configureStore} from '@reduxjs/toolkit'
+const store = configureStore({
+    reducer: { //Complete App's reducer
+        cart: cartReducer
+        <...other reducers>
+    }
+}) //will create an empty store
+
+3. Connect App with the store
+
+-using Provider, which comes from react-redux because we are providing our store to a react component
+
+import {Provider} from 'react-redux'
+import store
+<Provider store={store}>
+<App/>
+</Provider>
+
+4. Create slices for the store
+
+import {createSlice} from '@reduxjs/toolkit'
+const cartSlice = createSlice({
+    name: 'cart',
+    initialState: {
+        cartItems: []
+    },
+    reducer: {
+        addItems: (state, action) => {
+            state.cartItems.push(action.payload)
+        },
+        <...remaining reducers>
+    }
+})
+const {actions, reducer} = cartSlice
+export const { addItems, ...} = actions
+export default reducer
+
+Q: Why you cant assign new value to state like state.item = []
+A: 
 
 
+5. dispatch action
 
+import {useDispatch} from 'react-redux'
+const dispatch = usedispatch()
+const handleClick = () => {
+    dispatch(addItem('Pizza'))
+}
+
+Final store: cartItems: ['Pizza']
+
+6. Reading the data through selector
+- A selector is a hook given by react-redux, which subscribes to the App store
+
+import {useSelector} from 'react-redux'
+//subscriving to store and telling it that we only want items
+const cart = useSelector((store) => store.cart.cartItems)
+//cart has the value of the cartItems state of the app
