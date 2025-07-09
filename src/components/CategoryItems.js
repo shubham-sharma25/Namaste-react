@@ -1,18 +1,18 @@
 import {useDispatch} from 'react-redux'
-import {addItem} from '../redux/cartSlice'
 import { IMG_CDN_URL } from "../utils/constants";
+import { addItem } from '../redux/cartSlice';
 
 const CategoryItems = ({ itemCards }) => {
     const dispatch = useDispatch()
-    const addItems = () => {
+    const addItems = (itemName) => {
         //dispatch an action
-        dispatch(addItem('pizza'))
+        dispatch(addItem(itemName))
     }
     return (
         <div>
-            {itemCards.map((item) => {
+            {itemCards.map((item, idx) => {
                 return (
-                    <div key={item.card.info.id} className="p-4 my-2 border-b-1 text-left bg-white flex justify-between">
+                    <div key={idx} className="p-4 my-2 border-b-1 text-left bg-white flex justify-between">
                         <div className="w-9/12">
                             <div>
                                 <span className="py-2">{item.card.info.name}</span>
@@ -24,7 +24,7 @@ const CategoryItems = ({ itemCards }) => {
                         <div className="absolute">
                             <button
                             className="bg-green-200 rounded-lg px-2 hover:bg-green-300"
-                            onClick={addItems}
+                            onClick={() => addItems(item.card.info.name)}
                             >
                             Add
                             </button>
