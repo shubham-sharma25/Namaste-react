@@ -39,7 +39,9 @@ const Header = () => {
                     <li className="p-2 m-2 ">
                         <Link to="/grocery">Grocery</Link>
                     </li>
-                    <li className="p-2 m-2 ">Cart ({cart.length})</li>
+                    <li className="p-2 m-2 ">
+                        <Link to="/cart">Cart ({cart.length})</Link>
+                    </li>
                     <li className="p-2 m-2 ">{data?.loggedInUser}</li>
                     <li className="p-2 m-2 ">
                         <button className="p-2 border border-black rounded-lg cursor-pointer" onClick={setLogin}>{loginBtn}</button>

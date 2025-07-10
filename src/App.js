@@ -7,6 +7,7 @@ import Body from "./components/Body";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
 import Restaurant from "./components/Restaurant";
+import Cart from "./components/Cart";
 import UserContext from "./utils/UserContext";
 import store from './redux/store';
 
@@ -53,6 +54,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/grocery",
                 element: (<Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>),
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
             },
             {
                 path: "/restaurant/:resId",

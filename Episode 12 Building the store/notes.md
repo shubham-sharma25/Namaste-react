@@ -89,10 +89,6 @@ const {actions, reducer} = cartSlice
 export const { addItems, ...} = actions
 export default reducer
 
-Q: Why you cant assign new value to state like state.item = []
-A: 
-
-
 5. dispatch action
 
 import {useDispatch} from 'react-redux'
@@ -110,3 +106,27 @@ import {useSelector} from 'react-redux'
 //subscriving to store and telling it that we only want items
 const cart = useSelector((store) => store.cart.cartItems)
 //cart has the value of the cartItems state of the app
+
+Q: why you shouldnt subscribe to whole store within a component? const store = useSelector(store=>store)
+A: In a big application , there are several slices in a store , so ideally we should only subscribe to that slice which is corresponding to our component's need.
+If we subscribe to whole store then performance will impact as useSelector will fetch updated store data every time any of the slices updates (whether or not relevant to our component)
+
+The correct approacj is to subscribe to only the corresponding slice of the store which is affecting our component : const data = useSelector(store=>store.cart.items)
+
+Q: Whats the biggest different between legacy vanilla redux and redux toolkit ?
+A: We cant mutate the state in reducer in legacy redux instead we return a new state object which gets merged into the store but in redux toolkit reducer, we can directly modify the state and not return it.
+
+-In redux toolkit, while we directly mutate the state, behind the scenes redux internally applies the same old logic by creating a new state variable and updating it and returning it 
+
+-Redux uses ImmerJS internally which finds the difference between original state and mutated state and then returns a new immutable state
+
+- inside reducer, we cant assign new value to state like state.item = [] because here we are not mutating the state but we are modifying the reference to the state
+so the correct way of modification will be state.item.length = 0
+
+Q: what if you return a value from the reducer in redux toolkit
+A: the returned value will exactly replace the state of the store
+
+Redux devtools
+
+RTK query (Alternate of redux middleware, thunk)
+

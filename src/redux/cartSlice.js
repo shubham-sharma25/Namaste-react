@@ -18,6 +18,7 @@ const cartSlice = createSlice({
         clearCart: (state) => {
             // state.items = [] ....commenting as this is not the correct way to do it
             state.items.length = 0 // this is the correct way to clear the cart
+            // return {items: []} // alternatively, you can return a new state object
         }
     }
 })

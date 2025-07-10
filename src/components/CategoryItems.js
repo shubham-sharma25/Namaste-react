@@ -4,9 +4,9 @@ import { addItem } from '../redux/cartSlice';
 
 const CategoryItems = ({ itemCards }) => {
     const dispatch = useDispatch()
-    const addItems = (itemName) => {
+    const addItems = (item) => {
         //dispatch an action
-        dispatch(addItem(itemName))
+        dispatch(addItem(item))
     }
     return (
         <div>
@@ -23,8 +23,8 @@ const CategoryItems = ({ itemCards }) => {
                         <div className="w-3/12">
                         <div className="absolute">
                             <button
-                            className="bg-green-200 rounded-lg px-2 hover:bg-green-300"
-                            onClick={() => addItems(item.card.info.name)}
+                            className="bg-green-200 rounded-lg px-2 hover:bg-green-300 cursor-pointer"
+                            onClick={() => addItems(item)}
                             >
                             Add
                             </button>
